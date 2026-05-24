@@ -5,25 +5,14 @@ project(cmgen)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
-######### Fetch libraries from github ##############
-# include(FetchContent)
+add_executable(${PROJECT_NAME} src/main.cpp)
 
-# FetchContent_Declare(
-#   SDL3
-#   GIT_REPOSITORY https://github.com/libsdl-org/SDL.git
-#   GIT_TAG release-3.4.4
+target_include_directories(${PROJECT_NAME} PRIVATE include)
+
+# target_link_libraries(${PROJECT_NAME} PRIVATE
+#   include
 # )
-
-# FetchContent_MakeAvailable(SDL3)
-
-#####################################################
-
-add_executable(${PROJECT_NAME} main.cpp)
-
-# Rule of thumb: use private for binaries, public for libraries
-target_link_libraries(${PROJECT_NAME} PRIVATE
-  # SDL3::SDL3
-)
 
 
