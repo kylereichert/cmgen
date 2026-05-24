@@ -4,7 +4,7 @@
 #include <format>
 
 
-inline std::string sdl3Body(std::string name = "Project") { 
+inline std::string sdl3CMake(std::string name = "Project") { 
 
   std::string cmakebody = 
   std::format(R"(cmake_minimum_required(VERSION 3.30)
@@ -34,7 +34,7 @@ target_link_libraries(${{PROJECT_NAME}} PRIVATE
   return cmakebody;
 }
 
-inline std::string basicBody(std::string name = "Project") { 
+inline std::string basicCMake(std::string name = "Project") { 
 
   std::string cmakebody = 
   std::format(R"(cmake_minimum_required(VERSION 3.30)
@@ -49,4 +49,17 @@ add_executable(${{PROJECT_NAME}} main.cpp)
 
 )", name);
   return cmakebody;
+}
+
+inline std::string basicMain() {
+  std::string cppbody = 
+  R"(#include <iostream>
+
+int main() {
+  std::cout << "Hello, World!" << '\n';
+  return 0;
+}
+)";
+
+return cppbody;
 }
