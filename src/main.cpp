@@ -5,18 +5,18 @@
 
 
 int main(int argc, char* argv[]) {
-  // Error if too few arguments are supplied.
   if (argc < 2) {
     std::cerr << "Usage: cmgen <command> [options]\n";
     return 1;
   }  
+  
   // Just convert the args to match modern C++
   std::vector<std::string> args(argv, argc + argv);
 
   // New mapping, should pass a struct
   std::unordered_map<std::string, ProjectType> projects {
     {"--basic", {basicCMake, basicMain} },
-    {"--sdl3", {sdl3CMake, basicMain} }, // Change main.cpp to a sdl3 template
+    {"--sdl3", {sdl3CMake, sdl3Main} },
   };
 
   // Main parsing logic
