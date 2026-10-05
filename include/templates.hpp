@@ -315,13 +315,13 @@ inline std::string helpOutput() {
   R"(
   Commands:
 
-  --help  : Show this help screen
-  --basic : Create a basic program with a hello world setup
-  --sdl3  : Create a starting SDL3 program
+    --help  : Show this help screen
+    --basic : Create a basic program with a hello world setup
+    --sdl3  : Create a starting SDL3 program
 
-Options:
+  Options:
 
-  Name: Name of your project
+    Name: Name of your project
 )";
 
 return helpbody;
