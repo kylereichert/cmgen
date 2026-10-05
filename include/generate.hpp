@@ -70,5 +70,7 @@ inline Result init(const ProjectType& project, std::string name = "Project") {
   // their own function.
   std::filesystem::create_directories("build");
 
+  // reminder to initialize the build
+  std::cout << "Don't forget to run: cmake -S . -B build" << "\n";
   return {};
 }
