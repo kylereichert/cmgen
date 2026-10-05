@@ -309,3 +309,20 @@ int main() {
 
 return cppbody;
 }
+
+inline std::string helpOutput() {
+  std::string helpbody = 
+  R"(
+  Commands:
+
+  --help  : Show this help screen
+  --basic : Create a basic program with a hello world setup
+  --sdl3  : Create a starting SDL3 program
+
+Options:
+
+  Name: Name of your project
+)";
+
+return helpbody;
+}
